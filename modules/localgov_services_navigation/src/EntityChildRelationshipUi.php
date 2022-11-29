@@ -242,6 +242,12 @@ class EntityChildRelationshipUi implements ContainerInjectionInterface {
           }
         }
       }
+      
+      foreach ($node->localgov_destinations as $reference) {
+        if (!$reference->isEmpty()) {
+          $linked[] = $reference->getValue()['target_id'];
+        }
+      }
     }
     return $linked;
   }
